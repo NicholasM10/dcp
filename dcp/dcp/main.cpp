@@ -20,17 +20,22 @@ int main()
 int sChoice()
 {
 	{
+	BEEP:
 		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
 		{
 			helpUser = true;
 			cout << green << "COMMANDS: calculator, beep" << endl; // Ignore calculator for now.
 		}
-		else if (s == "beep" ||s == "beepit" ||s == "Beep" ||s == "BEEP" && helpUser == true)
+	
+	else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true)
 		{
 			for (int beepCounter = 0; beepCounter <= 2; beepCounter++){
 				cout << "\a" << endl;
-				//break;
+			}
+			while (true)
+			{
 				cin >> s;
+				goto BEEP;
 			}
 		}
 		else 
@@ -44,9 +49,4 @@ int sChoice()
 		}
 	}
 }
-/*
-void beepit()
-{
-	
-}
-*/
+// function for beeping later.

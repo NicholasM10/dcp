@@ -1,5 +1,4 @@
 #include <iostream>
-#include "ConsoleColor.h"
 #include <string>
 
 int sChoice();
@@ -12,43 +11,65 @@ string s; // string 0
 bool helpUser = true;
 int main()
 {
-	cout << green << "*** Welcome to  Dumb Console Program 0.0.0, please, type 'commands' for help. ***" << endl;
-	cin >> s; 
+	cout << "*** Welcome to  Dumb Console Program 0.0.1, please, type 'commands' for help. ***" << endl;
+	cin >> s;
 	sChoice();
 }
 
 int sChoice()
 {
+	while (true)
 	{
-	BEEP:
-		while (true){
-			if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
+		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
+		{
+			helpUser = true;
+			cout << "COMMANDS: calculator, beep" << endl;
+			cin >> s;
+		}
+		/////////////
+		else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true) // "beep" COMMAND
+		{
+			for (int beepCounter = 0; beepCounter <= 2; beepCounter++)
 			{
-				helpUser = true;
-				cout << green << "COMMANDS: calculator, beep" << endl; // Ignore calculator for now.
-				cin >> s;
+				cout << "\a" << endl;
+			}
+			cin >> s;
+		}
+		/////////////
+		else if (s == "calculator" || s == "calc" || s== "Calculator" || s == "I need calculator" || s == "good calculator"
+			|| "not dumb calculator" ) // Calculator
+		{
+			int calcNum1, calcNum2;
+			int calcResult = 0;
+			cout << "Welcome to DCP's great calculator 0.1" << endl;
+			cout << "Enter first number!" << endl;
+			cin >> calcNum1;
+			cout << "Enter +, -, or *" << endl;
+			cin >> s;
+			cout << "Enter second number" << endl;
+			cin >> calcNum2;
+			if (s == "+")
+			{
+		   calcResult = calcNum1 + calcNum2;
+
+		   
+			}
+			if (s == "-")
+			{
+				calcResult = calcNum1 - calcNum2;
 			}
 
-			else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true)
+			if (s == "*")
 			{
-				for (int beepCounter = 0; beepCounter <= 2; beepCounter++){
-					cout << "\a" << endl;
-				}
-				while (true)
-				{
-					cin >> s;
-					goto BEEP;
-				}
+				calcResult = calcNum1 * calcNum2;
 			}
-			else
-			{
-				cout << red << "What?!" << endl;
-				return 0;
-			}
+			cout << "That would be... " << calcResult << endl;
 		}
-		while (true)
+
+		else
 		{
-			system("PAUSE");
+			cout << "What?!" << endl; // Unrecorgnised command
+			cin >> s;
 		}
 	}
 }

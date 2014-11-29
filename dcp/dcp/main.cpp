@@ -7,7 +7,7 @@ void beepitfgt();
 using namespace std;
 
 string s; // string 0
-string s1; // string 1
+// string s1; // string 1
 
 bool helpUser = true;
 int main()
@@ -21,27 +21,30 @@ int sChoice()
 {
 	{
 	BEEP:
-		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
-		{
-			helpUser = true;
-			cout << green << "COMMANDS: calculator, beep" << endl; // Ignore calculator for now.
-		}
-	
-	else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true)
-		{
-			for (int beepCounter = 0; beepCounter <= 2; beepCounter++){
-				cout << "\a" << endl;
-			}
-			while (true)
+		while (true){
+			if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
 			{
+				helpUser = true;
+				cout << green << "COMMANDS: calculator, beep" << endl; // Ignore calculator for now.
 				cin >> s;
-				goto BEEP;
 			}
-		}
-		else 
-		{
-			cout << red << "What?!" << endl;
-			return 0;
+
+			else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true)
+			{
+				for (int beepCounter = 0; beepCounter <= 2; beepCounter++){
+					cout << "\a" << endl;
+				}
+				while (true)
+				{
+					cin >> s;
+					goto BEEP;
+				}
+			}
+			else
+			{
+				cout << red << "What?!" << endl;
+				return 0;
+			}
 		}
 		while (true)
 		{

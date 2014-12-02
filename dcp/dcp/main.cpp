@@ -27,7 +27,7 @@ int sChoice()
 		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
 		{
 			helpUser = true;
-			cout << "COMMANDS: calculator, beep" << endl;
+			cout << "COMMANDS: calculator, beep, randomsentence" << endl;
 			cin >> s;
 		}
 		/////////////
@@ -60,12 +60,10 @@ int sChoice()
 			{
 				calcResult = calcNum1 - calcNum2;
 			}
-
 			if (s == "*")
 			{
 				calcResult = calcNum1 * calcNum2;
 			}
-
 			if (s == "/")
 			{
 				calcResult = calcNum1 / calcNum2;
@@ -77,7 +75,7 @@ int sChoice()
 		{
 			int randomSentence = 1 + (rand() % 7);
 			srand(time(0));
-			for (int sentenceCounter = 0; sentenceCounter <= 2; sentenceCounter++)
+			for (int sentenceCounter = 0; sentenceCounter <= 0; sentenceCounter++)
 			{
 				switch (randomSentence)
 				{
@@ -105,7 +103,6 @@ int sChoice()
 				//goto START;
 				cin >> s;
 			}
-			
 		}
 		else
 		{

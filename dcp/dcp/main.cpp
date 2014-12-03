@@ -4,11 +4,9 @@
 #include <ctime>
 
 int sChoice();
-void beepitfgt();
 using namespace std;
 
 string s; // string 0
-// string s1; // string 1
 
 bool helpUser = true;
 
@@ -26,26 +24,23 @@ int sChoice()
 	START:
 		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
 		{
-			helpUser = true;
+			//helpUser = true;
 			cout << "COMMANDS: calculator, beep, randomsentence" << endl;
 			cin >> s;
 		}
 		/////////////
-		else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP" && helpUser == true) // "beep" COMMAND
+		if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP"/* && helpUser == true*/) // "beep" COMMAND
 		{
-			for (int beepCounter = 0; beepCounter <= 2; beepCounter++)
-			{
-				cout << "\a" << endl;
-			}
-			cin >> s;
+			cout << "\a";
+			cout << "*BEEP*" << endl;
 		}
 		/////////////
-		else if (s == "calculator" || s == "calc" || s == "Calculator" || s == "I need calculator" || s == "good calculator"
+		if (s == "calculator" || s == "calc" || s == "Calculator" || s == "I need calculator" || s == "good calculator"
 			|| s == "not dumb calculator") // Calculator
 		{
 			int calcNum1, calcNum2;
 			int calcResult = 0;
-			cout << "Welcome to DCP's great calculator 0.1" << endl;
+			cout << "Welcome to DCP's great calculator 1.0" << endl;
 			cout << "Enter first number!" << endl;
 			cin >> calcNum1;
 			cout << "Enter +, -, *, or /" << endl;
@@ -71,7 +66,7 @@ int sChoice()
 			cout << "That would be... " << calcResult << endl;
 		}
 
-		if (s == "randomsentence" || s == "randomSentence" || s == "RANDOMSENTENCE" || s == "say something") // This is what I was currently working on
+		if (s == "randomsentence" || s == "randomSentence" || s == "RANDOMSENTENCE" || s == "say something")
 		{
 			int randomSentence = 1 + (rand() % 7);
 			srand(time(0));
@@ -106,10 +101,9 @@ int sChoice()
 		}
 		else
 		{
-			cout << "What?!" << endl; // Unrecorgnised command
+			cout << "What?!" << endl; // Unrecorgnised command // here's problem.
 			cin >> s;
 		}
 	}
 	return 0;
 }
-// function for beeping later.

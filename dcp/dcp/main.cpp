@@ -21,7 +21,7 @@ int sChoice()
 {
 	while (true)
 	{
-	START:
+		//START:
 		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
 		{
 			//helpUser = true;
@@ -29,13 +29,14 @@ int sChoice()
 			cin >> s;
 		}
 		/////////////
-		if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP"/* && helpUser == true*/) // "beep" COMMAND
+		else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP"/* && helpUser == true*/) // "beep" COMMAND
 		{
 			cout << "\a";
 			cout << "*BEEP*" << endl;
+			cin >> s;
 		}
 		/////////////
-		if (s == "calculator" || s == "calc" || s == "Calculator" || s == "I need calculator" || s == "good calculator"
+		else if (s == "calculator" || s == "calc" || s == "Calculator" || s == "I need calculator" || s == "good calculator"
 			|| s == "not dumb calculator") // Calculator
 		{
 			int calcNum1, calcNum2;
@@ -66,7 +67,7 @@ int sChoice()
 			cout << "That would be... " << calcResult << endl;
 		}
 
-		if (s == "randomsentence" || s == "randomSentence" || s == "RANDOMSENTENCE" || s == "say something")
+		else if (s == "randomsentence" || s == "randomSentence" || s == "RANDOMSENTENCE" || s == "say something")
 		{
 			int randomSentence = 1 + (rand() % 7);
 			srand(time(0));

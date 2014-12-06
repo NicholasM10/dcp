@@ -4,107 +4,95 @@
 #include <ctime>
 
 int sChoice();
-using namespace std;
+void randomSentence();
 
-string s; // string 0
+std::string s;
 
 bool helpUser = true;
 
 int main()
 {
-	cout << "*** Welcome to  Dumb Console Program 0.0.1, please, type 'commands' for help. ***" << endl;
-	cin >> s;
+	std::cout << "*** Welcome to  Dumb Console Program 0.0.1, please, type 'commands' for help. ***" << std::endl;
+	std::cin >> s;
 	sChoice();
 }
 
 int sChoice()
 {
-	while (true)
-	{
-		//START:
-		if (s == "commands" || s == "command" || s == "cmd" || s == "help" || s == "HELP ME RIGHT NOW!" || s == "heeeeeeeeeeeeeelp")
-		{
-			//helpUser = true;
-			cout << "COMMANDS: calculator, beep, randomsentence" << endl;
-			cin >> s;
+	while (true) {
+		if (s == "commands"
+			|| s == "command"
+			|| s == "cmd"
+			|| s == "help"
+			|| s == "heeeeeeeeeeeeeelp") {
+			std::cout << "COMMANDS: calculator, beep, randomsentence" << std::endl;
 		}
-		/////////////
-		else if (s == "beep" || s == "beepit" || s == "Beep" || s == "BEEP"/* && helpUser == true*/) // "beep" COMMAND
-		{
-			cout << "\a";
-			cout << "*BEEP*" << endl;
-			cin >> s;
+		else if (s == "beep"
+			|| s == "beepit"
+			|| s == "Beep"
+			|| s == "BEEP") {
+			std::cout << "\a";
+			std::cout << "*BEEP*" << std::endl;
 		}
-		/////////////
-		else if (s == "calculator" || s == "calc" || s == "Calculator" || s == "I need calculator" || s == "good calculator"
-			|| s == "not dumb calculator") // Calculator
-		{
+		else if (s == "calculator"
+			|| s == "calc"
+			|| s == "Calculator") {
 			int calcNum1, calcNum2;
 			int calcResult = 0;
-			cout << "Welcome to DCP's great calculator 1.0" << endl;
-			cout << "Enter first number!" << endl;
-			cin >> calcNum1;
-			cout << "Enter +, -, *, or /" << endl;
-			cin >> s;
-			cout << "Enter second number" << endl;
-			cin >> calcNum2;
+			std::cout << "Welcome to DCP's great calculator 1.0" << std::endl;
+			std::cout << "Enter first number!" << std::endl;
+			std::cin >> calcNum1;
+			std::cout << "Enter +, -, *, or /" << std::endl;
+			std::cin >> s;
+			std::cout << "Enter second number" << std::endl;
+			std::cin >> calcNum2;
 			if (s == "+")
-			{
 				calcResult = calcNum1 + calcNum2;
-			}
 			if (s == "-")
-			{
 				calcResult = calcNum1 - calcNum2;
-			}
 			if (s == "*")
-			{
 				calcResult = calcNum1 * calcNum2;
-			}
 			if (s == "/")
-			{
 				calcResult = calcNum1 / calcNum2;
-			}
-			cout << "That would be... " << calcResult << endl;
+			std::cout << "That would be... " << calcResult << std::endl;
 		}
-
-		else if (s == "randomsentence" || s == "randomSentence" || s == "RANDOMSENTENCE" || s == "say something")
-		{
-			int randomSentence = 1 + (rand() % 7);
-			srand(time(0));
-			for (int sentenceCounter = 0; sentenceCounter <= 0; sentenceCounter++)
-			{
-				switch (randomSentence)
-				{
-				case 1:
-					cout << "Why do French have so many civil wars? So they can win one every now and again." << endl;
-					break;
-				case 2:
-					cout << "Hervey spots a brown bear." << endl;
-					break;
-				case 3:
-					cout << "I CAN'T COME UP WITH ANYTHING" << endl;
-					break;
-				case 4:
-					cout << "use 'command' to see command list." << endl;
-					break;
-				case 5:
-					cout << "Do not take life too seriously. You will never get out of it alive." << endl;
-					break;
-				case 6:
-					cout << "DM DM DM FC FC FC FC" << endl;
-					break;
-				default:
-					cout << "Alex Colette puts on his hat as he walks away." << endl;
-				}
-				//goto START;
-				cin >> s;
-			}
+		else if (s == "randomsentence"
+			|| s == "randomSentence"
+			|| s == "RANDOMSENTENCE") {
+			randomSentence();
 		}
-		else
-		{
-			cout << "What?!" << endl; // Unrecorgnised command // here's problem.
-			cin >> s;
+		else {
+			std::cout << "What?!" << std::endl;
 		}
+		std::cin >> s;
 	}
 	return 0;
+}
+
+void randomSentence()
+{
+	int randomSentence = 1 + (rand() % 7);
+	srand(time(0));
+	switch (randomSentence) {
+	case 1:
+		std::cout << "Why do French have so many civil wars? So they can win one every now and again." << std::endl;
+		break;
+	case 2:
+		std::cout << "Hervey spots a brown bear." << std::endl;
+		break;
+	case 3:
+		std::cout << "I CAN'T COME UP WITH ANYTHING" << std::endl;
+		break;
+	case 4:
+		std::cout << "use 'command' to see command list." << std::endl;
+		break;
+	case 5:
+		std::cout << "Do not take life too seriously. You will never get out of it alive." << std::endl;
+		break;
+	case 6:
+		std::cout << "DM DM DM FC FC FC FC" << std::endl;
+		break;
+	default:
+		std::cout << "Alex Colette puts on his hat as he walks away." << std::endl;
+	}
 }

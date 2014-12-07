@@ -52,8 +52,12 @@ int sChoice()
 				calcResult = calcNum1 - calcNum2;
 			if (s == "*")
 				calcResult = calcNum1 * calcNum2;
-			if (s == "/")
-				calcResult = calcNum1 / calcNum2;
+			if (s == "/"){
+				if (calcNum2 != 0)
+					calcResult = calcNum1 / calcNum2;
+				if (calcNum2 == 0)
+					std::cout << "Can't divide 0!" << std::endl;
+			}
 			std::cout << "That would be... " << calcResult << std::endl;
 		}
 		else if (s == "randomsentence"

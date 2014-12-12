@@ -27,7 +27,7 @@ int sChoice()
 			|| s == "cmd"
 			|| s == "help"
 			|| s == "heeeeeeeeeeeeeelp") {
-			std::cout << "COMMANDS: calculator, beep, randomsentence" << std::endl;
+			std::cout << "COMMANDS: calculator, beep, randomsentence, money" << std::endl;
 		}
 		else if (s == "beep"
 			|| s == "beepit"
@@ -71,7 +71,6 @@ int sChoice()
 		else if (s == "money"
 			|| s == "balance"
 			|| s == "mon"){
-			// Money command goes here
 			CommandMoney();
 		}
 
@@ -95,7 +94,8 @@ void randomSentence()
 		std::cout << "Hervey spots a brown bear." << std::endl;
 		break;
 	case 3:
-		std::cout << "I CAN'T COME UP WITH ANYTHING" << std::endl;
+		std::cout << "You found 2 Dollars on floor." << std::endl;
+		money += 2;
 		break;
 	case 4:
 		std::cout << "use 'command' to see command list." << std::endl;

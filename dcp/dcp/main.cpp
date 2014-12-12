@@ -5,9 +5,11 @@
 
 int sChoice();
 void randomSentence();
+void CommandMoney();
 
 std::string s;
-
+short money = 0;
+short moneyTypedInCounter = 0;
 bool helpUser = true;
 
 int main()
@@ -65,6 +67,14 @@ int sChoice()
 			|| s == "RANDOMSENTENCE") {
 			randomSentence();
 		}
+
+		else if (s == "money"
+			|| s == "balance"
+			|| s == "mon"){
+			// Money command goes here
+			CommandMoney();
+		}
+
 		else {
 			std::cout << "What?!" << std::endl;
 		}
@@ -99,4 +109,14 @@ void randomSentence()
 	default:
 		std::cout << "Alex Colette puts on his hat as he walks away." << std::endl;
 	}
+}
+void CommandMoney()
+{
+
+	while (moneyTypedInCounter == 0){
+		std::cout << "In this console you recieve \"Console Money\"! you can spend it in other commands" << std::endl;
+		std::cout << "This sounds dumb! But that's why this console is called dumb!" << std::endl;
+		moneyTypedInCounter++;
+	}
+	std::cout << "Your balance is: " << money << " Dumb Dollars (DD)" << std::endl;
 }
